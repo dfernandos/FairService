@@ -18,6 +18,9 @@ mvn spring-boot:run
 
 Project running in the port: 9191
 
+
+
 #### Note:
-You have to create a mysql database named: feirapp
+* You have to create a mysql database named: feirapp
+* To create, delete and get all fair you need import curl in postman
 
