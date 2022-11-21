@@ -28,7 +28,6 @@ public class FairService {
         return fairRepository.findAll();
     }
 
-
     public void deleteFair(int id){
         fairRepository.deleteById(id);
     }

@@ -18,12 +18,11 @@ public class Fair {
 
     @Id
     @GeneratedValue
-
     private int id;
     private String name;
     private String address;
     private String time;
     private String weekday;
-    private String latitude;
-    private String longitude;
+    private double latitude;
+    private double longitude;
 }
