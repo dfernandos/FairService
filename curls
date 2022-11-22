@@ -8,15 +8,14 @@ create fair
 
 curl --location --request POST 'localhost:9191/addFair' \
 --header 'Content-Type: application/json' \
---header 'Cookie: JSESSIONID=A03014C571B4E5F169B663A4BE87D827' \
 --data-raw '{
-    "name": "name",
+    "name": "Jardim Botanico",
     "address": "something",
-    "time": "time",
-    "weekday": "weekday",
-    "latitude": "-30.0524411",
-    "longitude": "-51.2183940"
-}'
+    "time": "15",
+    "weekday": "Sexta feira",
+    "latitude": -30.0469295,
+    "longitude": -51.1836387
+}
 
 Delete fair by id
 
