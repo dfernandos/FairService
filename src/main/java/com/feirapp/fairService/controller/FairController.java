@@ -30,4 +30,10 @@ public class FairController {
     public void deleteFair(@PathVariable(value = "id") int id){
         fairService.deleteFair(id);
     }
+
+    @JsonFormat
+    @GetMapping("/fairs/{weekday}")
+    public List<Fair> getAllFairsByWeekday(@PathVariable(value = "weekday") String weekday){
+        return fairService.getFairByWeekDay(weekday);
+    }
 }

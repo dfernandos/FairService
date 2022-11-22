@@ -31,4 +31,8 @@ public class FairService {
     public void deleteFair(int id){
         fairRepository.deleteById(id);
     }
+
+    public List<Fair> getFairByWeekDay(String weekday){
+        return fairRepository.getByweekday(weekday);
+    }
 }
