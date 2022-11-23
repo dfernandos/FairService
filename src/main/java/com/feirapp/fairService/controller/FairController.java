@@ -3,6 +3,7 @@ package com.feirapp.fairService.controller;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.feirapp.fairService.entity.Fair;
 import com.feirapp.fairService.service.FairService;
+import com.feirapp.fairService.utils.Marker;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,6 +18,11 @@ public class FairController {
     @PostMapping("/addFair")
     public Fair addFair(@RequestBody Fair fair){
         return fairService.saveFair(fair);
+    }
+
+    @PostMapping("/addMultipleFairs")
+    public List<Fair> addMultipleFairs(@RequestBody List<Fair> fairs){
+        return fairService.saveFairs(fairs);
     }
 
     @JsonFormat
@@ -35,5 +41,11 @@ public class FairController {
     @GetMapping("/fairs/{weekday}")
     public List<Fair> getAllFairsByWeekday(@PathVariable(value = "weekday") String weekday){
         return fairService.getFairByWeekDay(weekday);
+    }
+
+    @JsonFormat
+    @GetMapping("/fairs/markers")
+    public List<Marker> getAllMarkers(String weekday){
+        return fairService.getMarkers();
     }
 }
