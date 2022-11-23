@@ -2,13 +2,14 @@ package com.feirapp.fairService.service;
 
 import com.feirapp.fairService.entity.Fair;
 import com.feirapp.fairService.repository.FairRepository;
+import com.feirapp.fairService.utils.Marker;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 
+
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class FairService {
@@ -34,5 +35,16 @@ public class FairService {
 
     public List<Fair> getFairByWeekDay(String weekday){
         return fairRepository.getByweekday(weekday);
+    }
+
+    public List<Marker> getMarkers(){
+        List<Marker> markers = new ArrayList<>();
+        getFairs().stream().
+                forEach((Fair fair) -> {
+                    Marker marker = new Marker(fair.getName(), fair.getLatitude(), fair.getLongitude());
+                    markers.add(marker);
+                });
+
+        return markers;
     }
 }
