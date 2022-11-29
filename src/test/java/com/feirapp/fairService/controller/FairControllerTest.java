@@ -4,7 +4,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.feirapp.fairService.entity.Fair;
 import com.feirapp.fairService.repository.FairRepository;
 import com.feirapp.fairService.service.FairService;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
@@ -15,7 +14,6 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.ResultMatcher;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import java.util.Arrays;
@@ -43,7 +41,6 @@ class FairControllerTest {
     @Test
     void shouldAddFairAndReturnOk() throws Exception {
         Fair fair = new Fair(100, "test", "test", "test", "test", 32.53, 43.43);
-        //when(fairService.saveFair(fair)).thenReturn(fair);
 
         mockMvc.perform(post("/addFair")
                 .contentType(MediaType.APPLICATION_JSON)
