@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class FairService {
@@ -46,4 +47,9 @@ public class FairService {
 
         return markers;
     }
+
+    public Optional<Fair> getFair(int id){
+        return fairRepository.findById(id);
+    }
+
 }

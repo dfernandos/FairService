@@ -21,3 +21,289 @@ Delete fair by id
 
 curl --location --request DELETE 'localhost:9191/delete/2' \
 --header 'Cookie: JSESSIONID=A03014C571B4E5F169B663A4BE87D827'
+
+Add all fairs
+
+curl --location --request POST 'localhost:9191/addMultipleFairs' \
+--header 'Content-Type: application/json' \
+--data-raw '[
+    {
+        "id": 8,
+        "name": "CEARÁ",
+        "address": "Av. Ceará",
+        "time": "7:30",
+        "weekday": "Domingo",
+        "latitude": -30.0082422,
+        "longitude": -51.1940647
+    },
+    {
+        "id": 2,
+        "name": "JARDIM LEOPOLDINA",
+        "address": "something",
+        "time": "15",
+        "weekday": "Sexta feira",
+        "latitude": -30.0201821,
+        "longitude": -51.1136085
+    },
+    {
+        "id": 3,
+        "name": "JARDIM LEOPOLDINA",
+        "address": "something",
+        "time": "15",
+        "weekday": "Sexta feira",
+        "latitude": -29.998205724,
+        "longitude": -51.1354994774
+    },
+    {
+        "id": 4,
+        "name": "COSTA E SILVA",
+        "address": "something",
+        "time": "15",
+        "weekday": "Sexta feira",
+        "latitude": -30.0081289,
+        "longitude": -51.1199443
+    },
+    {
+        "id": 5,
+        "name": "Jardim Botanico",
+        "address": "something",
+        "time": "15",
+        "weekday": "Sexta feira",
+        "latitude": -30.0469295,
+        "longitude": -51.1836387
+    },
+    {
+        "id": 9,
+        "name": "Feira Modelo Jardim Leopoldina",
+        "address": "Rua Poá, em frente à praça Povo Palestino, no Bairro Jardim Leopoldinal",
+        "time": "15h30 às 20h30",
+        "weekday": "Quarta Feira",
+        "latitude": -30.023782,
+        "longitude": -51.118346
+    },
+    {
+        "id": 10,
+        "name": "Feira Modelo Cristal",
+        "address": "Rua Jaguari, esquina com a Avenida Campos Velho, Bairro Cristal",
+        "time": "15h30 às 20h30",
+        "weekday": "Quarta Feira",
+        "latitude": -30.092022,
+        "longitude": -51.236796
+    },
+    {
+        "id": 11,
+        "name": "Feira Modelo Teresópolis",
+        "address": "Rua Carlos Ferreira, em frente ao nº 325 (esquina com a rua Arnaldo Bohrer), Bairro Teresópolis",
+        "time": "15h30 às 20h30",
+        "weekday": "Quarta Feira",
+        "latitude": -30.08214,
+        "longitude": -51.2042
+    },
+    {
+        "id": 12,
+        "name": "Feira Modelo Camaquã",
+        "address": "Rua Prof. Dr. João Pitta Pinheiro Filho, 49 (entre as ruas Pereira Neto e Dr. Mário Totta), Bairro Camaquã",
+        "time": "15h30 às 20h30",
+        "weekday": "Quarta Feira",
+        "latitude": -30.107201,
+        "longitude": -51.236142
+    },
+    {
+        "id": 13,
+        "name": "Feira Modelo São Pedro",
+        "address": "Largo 1º de Junho, 362 (em frente ao antigo Zivi Hércules), Bairro Santa Maria Goretti",
+        "time": "15h30 às 20h30",
+        "weekday": "Quarta Feira",
+        "latitude": -30.022219,
+        "longitude": -51.119959
+    },
+    {
+        "id": 14,
+        "name": "Feira Modelo Florida",
+        "address": "Rua São Carlos esquina rua Comendador Azevedo - Floresta ",
+        "time": "15",
+        "weekday": "Terça Feira",
+        "latitude": -30.020984,
+        "longitude": -51.210281
+    },
+    {
+        "id": 15,
+        "name": "Feira Modelo GUIDO MONDIM",
+        "address": "Av. Guido Mondim esquina com a Presidente Roosevelt, Bairro São Geraldo",
+        "time": "7h30 às 12h30",
+        "weekday": "Quarta Feira",
+        "latitude": 30.009238,
+        "longitude": -51.20346
+    },
+    {
+        "id": 16,
+        "name": "Feira Modelo Epatur",
+        "address": "Largo Zumbi dos Palmares – Cidade Baixa",
+        "time": "15h30 às 20h30",
+        "weekday": "Terça Feira",
+        "latitude": -30.038065,
+        "longitude": -51.226184
+    },
+    {
+        "id": 17,
+        "name": "Feira João Telles",
+        "address": "Rua Gen. João Telles, entre Osvaldo Aranha e Henrique Dias - Bairro Bom Fim",
+        "time": "7h as 12h",
+        "weekday": "Terça Feira",
+        "latitude": -30.034002,
+        "longitude": -51.212814
+    },
+    {
+        "id": 18,
+        "name": "Feira Modelo Jardim Itú",
+        "address": "Av. Karl Iwers, esquina Av. Professora Paula Soares, Jardim Itu Sabará",
+        "time": "15h30 às 20h30",
+        "weekday": "Quinta Feira",
+        "latitude": -30.017575,
+        "longitude": -51.139374
+    },
+    {
+        "id": 19,
+        "name": "Feira Morro Santana",
+        "address": "Rua Amadeu Fagundes de Oliveira Freitas, 35 (esquina com a Avenida Protásio Alves), Morro Santana",
+        "time": "15h30 às 20h30",
+        "weekday": "Quinta Feira",
+        "latitude": -30.039463,
+        "longitude": -51.126974
+    },
+    {
+        "id": 20,
+        "name": "Feira Modelo Bom Jesus",
+        "address": "Rua  Dr. Murtinho (entre as Ruas São Felipe e São Domingos), Bom Jesus",
+        "time": "15h30 às 20h30",
+        "weekday": "Quinta Feira",
+        "latitude": -30.042195,
+        "longitude": -51.15324
+    },
+    {
+        "id": 21,
+        "name": "Feira Modelo Humaitá",
+        "address": "Rua Prof. João Souza Ribeiro, 707 (entre as ruas Eng.º Felício Lemieszek e Bonifácio Nunes), Humaitá",
+        "time": "15h30 às 20h30",
+        "weekday": "Quinta Feira",
+        "latitude": -29.981662,
+        "longitude": -51.191038
+    },
+    {
+        "id": 22,
+        "name": "Feira Modelo Jardim Ypu",
+        "address": "Rua Germano Schmarczek (entre as ruas Hugo Livi e Mãe Apolinária Matias Batista), Jardim Ypu",
+        "time": "15h30 às 20h30",
+        "weekday": "Quinta Feira",
+        "latitude": -30.046273,
+        "longitude": -51.135607
+    },
+    {
+        "id": 23,
+        "name": "Feira Modelo Menino Deus",
+        "address": "Praça Israel - Rua Vicente Lopes Santos (entre as Ruas Peri Machado e Botafogo), Bairro Menino Deus",
+        "time": "15h ás 20h30",
+        "weekday": "Quinta Feira",
+        "latitude": -30.052792,
+        "longitude": -51.225778
+    },
+    {
+        "id": 24,
+        "name": "Feira Modelo Jardim do Salso",
+        "address": "Rua Graciliano Ramos (entre as ruas Dr. Affonso Sanmartim e Prof. Pedro Santa Helena), Jardim do Salso",
+        "time": "7h30 às 12h30",
+        "weekday": "Sábado",
+        "latitude": -30.050361,
+        "longitude": -51.16756
+    },
+    {
+        "id": 25,
+        "name": "Feira Modelo Vila Nova",
+        "address": "Rua Atílio Supertti, 20 – esquina Rodrigues da Fonseca",
+        "time": "7h30 às 12h30",
+        "weekday": "Sábado",
+        "latitude": -30.116196,
+        "longitude": -51.212019
+    },
+    {
+        "id": 26,
+        "name": "Feira Modelo Passo da Mangueira",
+        "address": "Rua engenheiro João Luderitz - junto a praça Onze de Dezembro, Passo da Mangueira",
+        "time": "7h30 às 12h30",
+        "weekday": "Sábado",
+        "latitude": -30.006545,
+        "longitude": -51.135518
+    },
+    {
+        "id": 27,
+        "name": "Feira Modelo Partenon PUC-RS",
+        "address": "Av. Ceres (esquina com a R. Frei Germano e em frente à praça Padre Nebrídio Bolcato), Partenon",
+        "time": "7h30 às 12h30",
+        "weekday": "Sábado",
+        "latitude": -30.056907,
+        "longitude": -51.167498
+    },
+    {
+        "id": 28,
+        "name": "Feira Modelo Juca Batista",
+        "address": "Rua Rosane Dubin Wainberg (entre a Rua Olívio Koliver e Av. Juca Batista), Aberta dos Morros",
+        "time": "7h30 às 12h30",
+        "weekday": "Sábado",
+        "latitude": -30.14552,
+        "longitude": -51.213839
+    },
+    {
+        "id": 29,
+        "name": "Feira Modelo Vila Ipiranga",
+        "address": "Av. Dr. João Simplício Alves de Carvalho (entre Av.Francisco Trein e Rua Marcos Moreira), Vila Ipiranga",
+        "time": "7h30 às 12h30",
+        "weekday": "Sábado",
+        "latitude": -30.019234,
+        "longitude": -51.157621
+    },
+    {
+        "id": 30,
+        "name": "Feira Modelo Bom Fim",
+        "address": "Rua engenheiro João Luderitz - junto a praça Onze de Dezembro, Passo da Mangueira",
+        "time": "7h30 às 12h30",
+        "weekday": "Sábado",
+        "latitude": -30.031322,
+        "longitude": -51.213798
+    },
+    {
+        "id": 31,
+        "name": "Feira Modelo Santa Rosa",
+        "address": "Av. Bernardino de Oliveira Paim, 82, junto a Praça Vilmar Bertelli, Rubem Berta",
+        "time": "7h30 às 12h30",
+        "weekday": "Domingo",
+        "latitude": -29.994715,
+        "longitude": -51.101032
+    },
+    {
+        "id": 32,
+        "name": "Feira Modelo Praça Piratini",
+        "address": "Av. Piratini, na frente do Colégio  Estadual Júlio de Castilhos",
+        "time": "7h30 às 12h30",
+        "weekday": "Domingo",
+        "latitude": -30.044455,
+        "longitude": -51.213035
+    },
+    {
+        "id": 33,
+        "name": "Feira Modelo Grande Cruzeiro",
+        "address": "Av. Francisco Massena Vieira, 72 (próximo a R. Prof. Manoel Lobato), Santa Tereza",
+        "time": "7h30 às 12h30",
+        "weekday": "Domingo",
+        "latitude": -30.073646,
+        "longitude": -51.218208
+    },
+    {
+        "id": 34,
+        "name": "Feira Modelo Nonoai",
+        "address": "Av. São Sebastião, 317, junto a Praça Maurício Zazocliver, Nonoai",
+        "time": "7h30 às 12h30",
+        "weekday": "Quinta Feira",
+        "latitude": -30.090153,
+        "longitude": -51.225036
+    }
+]'
