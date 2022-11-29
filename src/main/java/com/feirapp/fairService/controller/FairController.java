@@ -2,6 +2,7 @@ package com.feirapp.fairService.controller;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.feirapp.fairService.entity.Fair;
+import com.feirapp.fairService.exceptions.FairException;
 import com.feirapp.fairService.service.FairService;
 import com.feirapp.fairService.utils.Marker;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,7 +34,7 @@ public class FairController {
 
 
     @DeleteMapping("/delete/{id}")
-    public void deleteFair(@PathVariable(value = "id") int id){
+    public void deleteFair(@PathVariable(value = "id") int id) throws FairException {
         fairService.deleteFair(id);
     }
 
