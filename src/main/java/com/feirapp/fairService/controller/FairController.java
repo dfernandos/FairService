@@ -5,11 +5,15 @@ import com.feirapp.fairService.entity.Fair;
 import com.feirapp.fairService.exceptions.FairException;
 import com.feirapp.fairService.service.FairService;
 import com.feirapp.fairService.utils.Marker;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @RestController
 public class FairController {
 

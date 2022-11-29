@@ -2,7 +2,6 @@ package com.feirapp.fairService.repository;
 
 import com.feirapp.fairService.entity.Fair;
 import com.feirapp.fairService.exceptions.FairException;
-import com.feirapp.fairService.repository.FairRepository;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

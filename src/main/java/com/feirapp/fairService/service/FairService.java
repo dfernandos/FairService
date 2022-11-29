@@ -35,14 +35,8 @@ public class FairService {
         return fairRepository.findAll();
     }
 
-    public boolean deleteFair(int id) throws FairException{
-        try{
+    public void deleteFair(int id) {
             fairRepository.deleteById(id);
-            return true;
-        }
-        catch (Exception ex){
-            throw new FairException();
-        }
     }
 
     public List<Fair> getFairByWeekDay(String weekday){
