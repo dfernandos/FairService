@@ -8,6 +8,12 @@
 mvn spring-boot:run
 ```
 
+### how to all tests
+
+```bash
+mvn test
+```
+
 ## Technologies
 
 * Java 11
