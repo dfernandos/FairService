@@ -1,4 +1,4 @@
-package com.feirapp.fairService;
+package com.feirapp.fairService.repository;
 
 import com.feirapp.fairService.entity.Fair;
 import com.feirapp.fairService.exceptions.FairException;

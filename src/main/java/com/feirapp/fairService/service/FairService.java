@@ -19,6 +19,10 @@ public class FairService {
     @Autowired
     private FairRepository fairRepository;
 
+    public FairService(FairRepository fairRepository) {
+        this.fairRepository = fairRepository;
+    }
+
     public Fair saveFair(Fair fair){
        return fairRepository.save(fair);
     }
