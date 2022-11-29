@@ -1,8 +1,10 @@
 package com.feirapp.fairService.service;
 
 import com.feirapp.fairService.entity.Fair;
+import com.feirapp.fairService.exceptions.FairException;
 import com.feirapp.fairService.repository.FairRepository;
 import com.feirapp.fairService.utils.Marker;
+import net.bytebuddy.implementation.bytecode.Throw;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -29,8 +31,14 @@ public class FairService {
         return fairRepository.findAll();
     }
 
-    public void deleteFair(int id){
-        fairRepository.deleteById(id);
+    public boolean deleteFair(int id) throws FairException{
+        try{
+            fairRepository.deleteById(id);
+            return true;
+        }
+        catch (Exception ex){
+            throw new FairException();
+        }
     }
 
     public List<Fair> getFairByWeekDay(String weekday){
