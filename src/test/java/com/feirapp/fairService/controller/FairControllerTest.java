@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.feirapp.fairService.entity.Fair;
 import com.feirapp.fairService.repository.FairRepository;
 import com.feirapp.fairService.service.FairService;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
@@ -38,10 +39,20 @@ class FairControllerTest {
     @Autowired
     private ObjectMapper objectMapper;
 
+    private Fair fair;
+
+    List<Fair> fairs;
+
+    @BeforeEach
+    void setUp(){
+        fair = new Fair(100, "test", "test", "test", "test", 32.53, 43.43);
+        fairs = Arrays.asList(
+                new Fair(100, "test", "test", "test", "test", 32.53, 43.43),
+                new Fair(100, "test", "test", "test", "test", 32.53, 43.43));
+    }
+
     @Test
     void shouldAddFairAndReturnOk() throws Exception {
-        Fair fair = new Fair(100, "test", "test", "test", "test", 32.53, 43.43);
-
         mockMvc.perform(post("/addFair")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(fair)))
@@ -50,9 +61,6 @@ class FairControllerTest {
 
     @Test
     void getAllFairs() throws Exception {
-        List<Fair> fairs = Arrays.asList(
-                new Fair(100, "test", "test", "test", "test", 32.53, 43.43),
-                new Fair(100, "test", "test", "test", "test", 32.53, 43.43));
 
         Mockito.when(fairService.getFairs()).thenReturn(fairs);
         mockMvc.perform(MockMvcRequestBuilders.get("/fairs"))
@@ -68,9 +76,6 @@ class FairControllerTest {
 
     @Test
     void getAllFairsByWeekday() throws Exception {
-        List<Fair> fairs = Arrays.asList(
-                new Fair(100, "test", "test", "test", "test", 32.53, 43.43),
-                new Fair(100, "test", "test", "test", "test", 32.53, 43.43));
 
         Mockito.when(fairService.getFairByWeekDay("Domingo")).thenReturn(fairs);
         mockMvc.perform(MockMvcRequestBuilders.get("/fairs/{weekday}", "Domingo"))
